@@ -15,4 +15,14 @@ class Network
     @shows << show
   end
 
+  def main_characters
+    main = @shows.map do |show|
+            show.characters.map do |character|
+                if (character.name == character.name.upcase) && character.salary > 500_000
+                  character
+                end
+              end
+            end.flatten.reject {|ind| ind.nil?}
+  end
+
 end
