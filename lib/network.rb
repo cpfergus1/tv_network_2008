@@ -25,4 +25,10 @@ class Network
             end.flatten.reject {|ind| ind.nil?}
   end
 
+  def actors_by_show
+    hash = {}
+    @shows.each do |show|
+      hash[show] = show.characters.map {|character| character.actor}
+      end
+  end
 end
