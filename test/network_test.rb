@@ -16,9 +16,9 @@ class NetworkTest <Minitest::Test
     leslie_knope = Character.new({name: "Leslie Knope", actor: "Amy Poehler", salary: 2_000_000})
     ron_swanson = Character.new({name: "Ron Swanson", actor: "Nick Offerman", salary: 1_400_000})
     parks_and_rec = Show.new("Parks and Recreation", "Michael Shur & Greg Daniels", [leslie_knope, ron_swanson])
-    assert_equal nbc.add_show(knight_rider)
-    assert_equal nbc.add_show(parks_and_rec)
-    assert_equal nbc.shows
+    nbc.add_show(knight_rider)
+    nbc.add_show(parks_and_rec)
+    assert_equal [knight_rider, parks_and_rec], nbc.shows
     assert_equal nbc.main_characters
     assert_equal nbc.actors_by_show
   end
