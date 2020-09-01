@@ -13,4 +13,12 @@ class Show
   def total_salary
     @characters.sum {|ind| ind.salary}
   end
+
+  def highest_paid_actor
+    @characters.sort_by {|ind| -ind.salary}.first.actor
+  end
+
+  def actors
+    @characters.map {|ind| ind.actor}
+  end
 end
